@@ -40,6 +40,7 @@ exposures:
     
     depends_on:
       - ref('stg_orders')
+      - source('raw_orders')
 
     owner:
       name: eiof
