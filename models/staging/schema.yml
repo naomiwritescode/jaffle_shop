@@ -1,5 +1,12 @@
 version: 2
 
+sources:
+  - name: warehouse
+    tables:
+      - name: raw_customers
+      - name: raw_orders
+      - name: raw_payments
+
 models:
   - name: stg_customers
     columns:
@@ -40,7 +47,6 @@ exposures:
     
     depends_on:
       - ref('stg_orders')
-      - source('raw_orders')
 
     owner:
       name: eiof
