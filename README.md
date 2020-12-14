@@ -32,7 +32,7 @@ To get up and running with this project:
 3. Change into the `jaffle_shop` directory from the command line:
 
 ```bash
-$ cd jaffle_shop aaa
+$ cd jaffle_shop aaaqqqqz
 ```
 
 4. Set up a profile called `jaffle_shop` to connect to a data warehouse by
