@@ -1,0 +1,12 @@
+WITH customer_orders AS (
+  SELECT
+    *
+  FROM {{ ref('customer_orders') }}
+), fields_of_gold AS (
+  SELECT
+    *
+  FROM customer_orders
+)
+SELECT
+  *
+FROM fields_of_gold
