@@ -1,23 +1,15 @@
-with source as (
-
-    {#-
-    Normally we would select from the table here, but we are using seeds to load
-    our data in this project
-    #}
-    select * from {{ ref('raw_orders') }}
-
-),
-
-renamed as (
-
-    select
-        id as order_id,
-        user_id as customer_id,
-        order_date,
-        status
-
-    from source
-
+WITH raw_orders AS (
+  SELECT
+    ID AS ORDER_ID,
+    USER_ID AS CUSTOMER_ID,
+    ORDER_DATE,
+    STATUS
+  FROM {{ ref('raw_orders') }}
+), stg_orders AS (
+  SELECT
+    *
+  FROM raw_orders
 )
-
-select * from renamed
+SELECT
+  *
+FROM stg_orders
